@@ -18,7 +18,7 @@ type ClassFile struct {
 
 func Parse(classData []byte) (cf *ClassFile, err error) {
 	defer func() {
-		if r := revocer(); r != nil {
+		if r := recover(); r != nil {
 			var ok bool
 			err, ok = r.(error)
 			if !ok {
