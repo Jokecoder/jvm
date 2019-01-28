@@ -25,9 +25,9 @@ func (self *BootstrapMethodAttribute) readInfo(reader *ClassReader) {
 	numBootstrapMethods := reader.readUint16()
 	self.bootstrapMethods = make([]*BootstrapMethod, numBootstrapMethods)
 	for i := range self.bootstrapMethods {
-		self.bootstrapMethods = &BootstrapMethod{
+		self.bootstrapMethods[i] = &BootstrapMethod{
 			bootstrapMethodRef: reader.readUint16(),
-			bootstrapArguments: reader.readUint16(),
+			bootstrapArguments: reader.readUint16s(),
 		}
 	}
 }

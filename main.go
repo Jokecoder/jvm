@@ -26,16 +26,19 @@ func startJVM(cmd *Cmd) {
 
 	className := strings.Replace(cmd.class, ".", "/", -1)
 
-	classData, _, err := cp.ReadClass(className)
+	cf := loadClass(className, cp)
 
-	if err != nil {
-		fmt.Printf("Cloud not load main class %s\n", cmd.class)
-		return
-	}
-	fmt.Printf("Class Data: %v\n", classData)
+	//if err != nil {
+	//	fmt.Printf("Cloud not load main class %s\n", cmd.class)
+	//	return
+	//}
+	//fmt.Printf("Class Data: %v\n", classData)
+
+	fmt.Println(cmd.class)
+	printClassInfo(cf)
 }
 
-func loadClass(className string, cp *classpath.Classpath) *classpath.ClassFile {
+func loadClass(className string, cp *classpath.Classpath) *classfile.ClassFile {
 	classData, _, err := cp.ReadClass(className)
 	if err != nil {
 		panic(err)
