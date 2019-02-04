@@ -22,6 +22,6 @@ func newWildcardEntry(path string) CompositeEntry {
 		}
 		return nil
 	}
-	filepath.Walk(baseDir,walkFn)
+	filepath.Walk(baseDir, walkFn)
 	return compositeEntry
 }

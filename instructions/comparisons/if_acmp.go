@@ -1,8 +1,8 @@
 package comparisons
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 type IF_ACMPEQ struct {

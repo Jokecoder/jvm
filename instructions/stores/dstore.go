@@ -1,8 +1,8 @@
 package stores
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 type DSTORE struct {

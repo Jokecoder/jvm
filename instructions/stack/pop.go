@@ -1,8 +1,8 @@
 package stack
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 // 弹出int float等占一个位置的变量

@@ -1,15 +1,14 @@
 package base
 
-import "jvm/rtda"
+import "JVM/rtda"
 
-type Instruction interface{
+type Instruction interface {
 	FetchOperands(reader *BytecodeReader)
 
 	Execute(frame *rtda.Frame)
 }
 
 type NoOperandsInstruction struct {
-
 }
 
 func (self *NoOperandsInstruction) FetchOperands(reader *BytecodeReader) {
@@ -22,7 +21,7 @@ type BranchInstruction struct {
 }
 
 func (self *BranchInstruction) FetchOperands(reader *BytecodeReader) {
-	self.Offset = int (reader.ReadInt16())
+	self.Offset = int(reader.ReadInt16())
 }
 
 // 存储和加载类指令存放于局部变量表，单字节

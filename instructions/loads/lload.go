@@ -1,8 +1,8 @@
 package loads
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 // load long from local variable

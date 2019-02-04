@@ -1,8 +1,8 @@
 package control
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 type LOOKUP_SWITCH struct {

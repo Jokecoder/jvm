@@ -1,8 +1,8 @@
 package math
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 // 局部变量表中int变量加常量

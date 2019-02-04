@@ -1,8 +1,8 @@
 package extended
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 // goto扩展2->4

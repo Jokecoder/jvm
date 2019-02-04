@@ -1,10 +1,10 @@
 package classpath
 
 import (
-	"path/filepath"
 	"archive/zip"
-	"io/ioutil"
 	"errors"
+	"io/ioutil"
+	"path/filepath"
 )
 
 type ZipEntry struct {

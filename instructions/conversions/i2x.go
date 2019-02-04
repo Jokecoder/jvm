@@ -1,8 +1,8 @@
 package conversions
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 // double -> float,int,long

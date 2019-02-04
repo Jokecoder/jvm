@@ -1,8 +1,8 @@
 package comparisons
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 type FCMPG struct {

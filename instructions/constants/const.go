@@ -1,8 +1,8 @@
 package constants
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 type ACONST_NULL struct {

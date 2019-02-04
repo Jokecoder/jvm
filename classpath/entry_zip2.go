@@ -3,8 +3,8 @@ package classpath
 import (
 	"archive/zip"
 	"github.com/pkg/errors"
-	"path/filepath"
 	"io/ioutil"
+	"path/filepath"
 )
 
 type ZipEntry2 struct {
@@ -46,7 +46,7 @@ func (self *ZipEntry2) openJar() error {
 }
 
 func (self *ZipEntry2) findClass(className string) *zip.File {
-	for _,f:=range self.zipRc.File{
+	for _, f := range self.zipRc.File {
 		if f.Name == className {
 			return f
 		}

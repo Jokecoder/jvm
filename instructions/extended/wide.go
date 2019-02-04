@@ -1,11 +1,11 @@
 package extended
 
 import (
-	"jvm/instructions/base"
+	"JVM/instructions/base"
+	"JVM/rtda"
 	"jvm/instructions/loads"
 	"jvm/instructions/math"
 	"jvm/instructions/stores"
-	"jvm/rtda"
 )
 
 type WIDE struct {

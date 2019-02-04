@@ -37,7 +37,7 @@ func (self *Classpath) parseUserClasspath(cpOption string) {
 	if cpOption == "" {
 		cpOption = "."
 	}
-	self.userClasspath = newWildcardEntry(cpOption)
+	self.userClasspath = newEntry(cpOption)
 }
 
 // 加载class文件的字节码 顺序 boot > ext > user

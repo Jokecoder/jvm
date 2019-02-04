@@ -1,8 +1,8 @@
 package loads
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 // load reference from local variable

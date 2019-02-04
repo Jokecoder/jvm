@@ -1,8 +1,8 @@
 package instructions
 
 import (
+	"JVM/instructions/base"
 	"fmt"
-	"jvm/instructions/base"
 )
 import . "jvm/instructions/comparisons"
 import . "jvm/instructions/constants"

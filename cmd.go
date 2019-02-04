@@ -12,7 +12,7 @@ type Cmd struct {
 	cpOption    string
 	XjreOption  string
 	class       string
-	args        [] string
+	args        []string
 }
 
 func parseCmd() *Cmd {

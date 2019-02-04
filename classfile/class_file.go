@@ -59,7 +59,7 @@ func (self *ClassFile) readAndCheckVersion(reader *ClassReader) {
 	switch self.majorVersion {
 	case 45:
 		return
-	case 46, 47, 48, 49, 50, 51, 52, 53, 54:
+	case 46, 47, 48, 49, 50, 51, 52, 53, 54, 55:
 		if self.minorVersion == 0 {
 			return
 		}

@@ -1,8 +1,8 @@
 package stack
 
 import (
-	"jvm/instructions/base"
-	"jvm/rtda"
+	"JVM/instructions/base"
+	"JVM/rtda"
 )
 
 type SWAP struct {
