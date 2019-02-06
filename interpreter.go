@@ -1,23 +1,19 @@
 package main
 
 import (
-	"JVM/classfile"
 	"JVM/instructions"
 	"JVM/instructions/base"
 	"JVM/rtda"
+	"JVM/rtda/heap"
 	"fmt"
 )
 
-func interpret(methodInfo *classfile.MemberInfo) {
-	codeAttr := methodInfo.CodeAttribute()
-	maxLocals := codeAttr.MaxLocals()
-	maxStack := codeAttr.MaxStack()
-	bytecode := codeAttr.Code()
+func interpret(method *heap.Method) {
 	thread := rtda.NewThread()
-	frame := thread.NewFrame(maxLocals, maxStack)
+	frame := thread.NewFrame(method)
 	thread.PushFrame(frame)
 	defer catchErr(frame)
-	loop(thread, bytecode)
+	loop(thread, method.Code())
 }
 
 // catch ret指令的err
