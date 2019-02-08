@@ -29,11 +29,11 @@ func startJVM(cmd *Cmd) {
 
 	//testOperandStack(frame.OperandStack())
 	cmd.cpOption = "./javacode"
-	cmd.class = "MyObject"
+	cmd.class = "FibonacciTest"
 
 	cp := classpath.Parse(cmd.XjreOption, cmd.cpOption)
 
-	classLoader := heap.NewClassLoader(cp)
+	classLoader := heap.NewClassLoader(cp, cmd.verboseClassFlag)
 
 	fmt.Printf("classpath:%v class:%v args:%v\n", cp, cmd.class, cmd.args)
 
@@ -46,7 +46,7 @@ func startJVM(cmd *Cmd) {
 	//mainMethod := getMainMethod(cf)
 	mainMethod := mainClass.GetMainMethod()
 	if mainMethod != nil {
-		interpret(mainMethod)
+		interpret(mainMethod, cmd.verboseInstFlag)
 	} else {
 		fmt.Printf("Main method not found in class %s\n", cmd.class)
 	}

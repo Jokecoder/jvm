@@ -19,6 +19,7 @@ type Class struct {
 	instanceSlotCount uint
 	staticSlotCount   uint
 	staticVars        Slots
+	initStarted       bool
 }
 
 func newClass(cf *classfile.ClassFile) *Class {
@@ -67,6 +68,10 @@ func (self *Class) ConstantPool() *ConstantPool {
 	return self.constantPool
 }
 
+func (self *Class) Name() string {
+	return self.name
+}
+
 func (self *Class) StaticVars() Slots {
 	return self.staticVars
 }
@@ -93,4 +98,27 @@ func (self *Class) getPackageName() string {
 
 func (self *Class) NewObject() *Object {
 	return newObject(self)
+}
+
+func (self *Class) GetPackageName() string {
+	if i := strings.LastIndex(self.name, "/"); i >= 0 {
+		return self.name[:i]
+	}
+	return ""
+}
+
+func (self *Class) InitStarted() bool {
+	return self.initStarted
+}
+
+func (self *Class) StartInit() {
+	self.initStarted = true
+}
+
+func (self *Class) GetClinitMethod() *Method {
+	return self.getStaticMethod("<clinit>", "()V")
+}
+
+func (self *Class) SuperClass() *Class {
+	return self.superClass
 }
