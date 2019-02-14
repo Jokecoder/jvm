@@ -20,6 +20,7 @@ type Class struct {
 	staticSlotCount   uint
 	staticVars        Slots
 	initStarted       bool
+	jClass            *Object // java.lang.Class实例
 }
 
 func newClass(cf *classfile.ClassFile) *Class {
@@ -70,6 +71,10 @@ func (self *Class) ConstantPool() *ConstantPool {
 
 func (self *Class) Name() string {
 	return self.name
+}
+
+func (self *Class) JClass() *Object {
+	return self.jClass
 }
 
 func (self *Class) StaticVars() Slots {
@@ -158,4 +163,13 @@ func (self *Class) getField(name, descriptor string, isStatic bool) *Field {
 		}
 	}
 	return nil
+}
+
+func (self *Class) JavaName() string {
+	return strings.Replace(self.name, "/", ".", -1)
+}
+
+func (self *Class) IsPrimitive() bool {
+	_, ok := primitiveTypes[self.name]
+	return ok
 }

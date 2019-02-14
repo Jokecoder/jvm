@@ -29,15 +29,16 @@ func startJVM(cmd *Cmd) {
 
 	//testOperandStack(frame.OperandStack())
 	cmd.cpOption = "./javacode"
-	cmd.class = "PrintArgs"
-	testStrings := make([]string,4)
-	testStrings = append(testStrings, "sdfsdf")
-	testStrings = append(testStrings, "fgdfg")
-	testStrings = append(testStrings, "hgjghj")
-	testStrings = append(testStrings, "ertet")
+	cmd.class = "StringTest"
+	//testStrings := make([]string,4)
+	//testStrings = append(testStrings, "sdfsdf")
+	//testStrings = append(testStrings, "fgdfg")
+	//testStrings = append(testStrings, "hgjghj")
+	//testStrings = append(testStrings, "ertet")
+	//
+	//cmd.args = testStrings
 
-	cmd.args = testStrings
-
+	cmd.verboseInstFlag = true
 	cp := classpath.Parse(cmd.XjreOption, cmd.cpOption)
 
 	classLoader := heap.NewClassLoader(cp, cmd.verboseClassFlag)
